@@ -84,7 +84,15 @@ export default function Home() {
             </div>
           ))}
         </div>
-
+        <div className="my-10">
+  <iframe
+    src="https://www.google.com/maps/d/embed?mid=1GKx61MAzpii0OYi1pKGj1OIMcIjU8WU&ehbc=2E312F"
+    width="100%"
+    height="500"
+    className="rounded-2xl border"
+    loading="lazy"
+  ></iframe>
+</div>
         <div className="mt-16 border-t pt-8">
           <h3 className="text-2xl font-bold mb-4">
             Future Features
