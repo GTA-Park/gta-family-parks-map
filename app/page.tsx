@@ -1,63 +1,104 @@
-const parks = [
-  "Lynde Shores Conservation Area - Bird feeding, deer",
-  "Lake Wilcox Park - Lakeview, splash pad",
-  "Chinguacousy Park - Zoo, splash pad, playground",
-  "Sixteen Mile Sports Park - Skate park, zipline, splash pad, pump track",
-  "Happy Rolph's Animal Farm - Free farm and park",
-];
-
 export default function Home() {
+  const parks = [
+    {
+      name: "High Park",
+      city: "Toronto",
+      feature: "Zoo, playground, trails",
+    },
+    {
+      name: "Edwards Gardens",
+      city: "Toronto",
+      feature: "Nature trails, flowers",
+    },
+    {
+      name: "Centennial Park",
+      city: "Etobicoke",
+      feature: "Playground, skating, fields",
+    },
+    {
+      name: "Richmond Green",
+      city: "Richmond Hill",
+      feature: "Splash pad, sports fields",
+    },
+    {
+      name: "Mill Pond Park",
+      city: "Richmond Hill",
+      feature: "Lake, trails, ducks",
+    },
+    {
+      name: "Toogood Pond",
+      city: "Unionville",
+      feature: "Boardwalk and trails",
+    },
+    {
+      name: "Berczy Park",
+      city: "Markham",
+      feature: "Castle playground",
+    },
+    {
+      name: "Milne Dam Conservation Park",
+      city: "Markham",
+      feature: "Trails and picnic",
+    },
+    {
+      name: "Lake Wilcox Park",
+      city: "Richmond Hill",
+      feature: "Beach and splash pad",
+    },
+    {
+      name: "Kortright Centre",
+      city: "Vaughan",
+      feature: "Forest trails and nature",
+    },
+  ];
+
   return (
-    <main className="min-h-screen bg-[#f7f5ef] p-6">
-      <section className="max-w-5xl mx-auto">
-        <div className="bg-white rounded-3xl p-8 shadow-sm mb-6">
-          <p className="text-sm uppercase tracking-wide text-gray-500">
-            GTA Family Activities Map
-          </p>
-          <h1 className="text-4xl font-bold mt-2">
-            Free & Fun Parks Around GTA
-          </h1>
-          <p className="text-gray-600 mt-3">
-            Curated family-friendly parks, splash pads, animal experiences,
-            trails, toboggan hills and hidden gems.
-          </p>
-        </div>
+    <main className="min-h-screen bg-white text-black p-8">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-5xl font-bold mb-4">
+          GTA Family Parks Map
+        </h1>
 
-        <div className="bg-yellow-100 border border-yellow-200 rounded-2xl p-4 mb-6 text-center">
-          Banner Ad Space
-        </div>
+        <p className="text-lg text-gray-600 mb-10">
+          Discover free parks, splash pads, trails, playgrounds,
+          and family-friendly outdoor activities across the GTA.
+        </p>
 
-        <div className="grid md:grid-cols-3 gap-4 mb-6">
-          {["Splash Pad", "Animal Experience", "Zipline", "Tobogganing", "Community Centre"].map(
-            (tag) => (
-              <button
-                key={tag}
-                className="bg-white rounded-full px-4 py-3 shadow-sm text-sm font-medium"
-              >
-                {tag}
-              </button>
-            )
-          )}
-        </div>
-
-        <div className="bg-white rounded-3xl p-6 shadow-sm mb-6">
-          <h2 className="text-2xl font-bold mb-3">Map Coming Soon</h2>
-          <div className="h-80 rounded-2xl bg-gray-100 flex items-center justify-center text-gray-500">
-            Interactive map placeholder
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {parks.map((park) => (
-            <div key={park} className="bg-white rounded-2xl p-5 shadow-sm">
-              <h3 className="font-semibold">{park}</h3>
-              <p className="text-sm text-gray-500 mt-2">
-                Family-friendly local spot. Full review coming soon.
+            <div
+              key={park.name}
+              className="border rounded-2xl p-6 shadow-sm hover:shadow-lg transition"
+            >
+              <h2 className="text-2xl font-semibold mb-2">
+                {park.name}
+              </h2>
+
+              <p className="text-gray-500 mb-3">
+                📍 {park.city}
+              </p>
+
+              <p className="text-gray-700">
+                {park.feature}
               </p>
             </div>
           ))}
         </div>
-      </section>
+
+        <div className="mt-16 border-t pt-8">
+          <h3 className="text-2xl font-bold mb-4">
+            Future Features
+          </h3>
+
+          <ul className="space-y-2 text-gray-700">
+            <li>✅ Interactive GTA map</li>
+            <li>✅ Nearby park search</li>
+            <li>✅ Splash pad filter</li>
+            <li>✅ Free weekend activities</li>
+            <li>✅ Family event listings</li>
+          </ul>
+        </div>
+      </div>
     </main>
   );
 }
